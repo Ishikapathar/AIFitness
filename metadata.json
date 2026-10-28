@@ -1,0 +1,6 @@
+{
+  "name": "FitLife AI",
+  "description": "AI-powered fitness platform featuring real-time camera movement guidance, personalized workout and diet plans, habit tracking, and progress analytics.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

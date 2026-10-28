@@ -1,0 +1,838 @@
+# PROJECT: FITLIFE AI — COMPLETE AI-POWERED FITNESS WEBSITE FRONTEND
+
+Act as a senior UI/UX designer, frontend architect, React developer and product designer.
+
+Build a complete, premium-quality, responsive web application named **FitLife AI**. It is an AI-powered fitness platform that helps users exercise with camera-based movement guidance, follow personalized workout and diet plans, track daily habits, and understand their fitness progress.
+
+I want a fully designed and navigable application, not merely a landing page, wireframe, static mockup or collection of disconnected screens.
+
+The application should have a consistent design system, reusable components, functional navigation, realistic interactions, well-organized code and a clear path to future backend integration.
+
+## CRITICAL PROJECT AND FILE RULES
+
+1. First inspect the existing workspace and identify its framework, dependencies, source directories and current files.
+2. If a project already exists, continue inside that same project. Do not initialize a second application or create a nested project folder.
+3. Preserve all existing working code and configuration unless a change is genuinely necessary.
+4. If the workspace is empty, initialize a single frontend application using React, TypeScript and the framework supported by the environment.
+5. Use the existing routing and styling approach when possible.
+6. Do not create duplicate components, duplicate package files, unnecessary configuration files or another independent frontend.
+7. Do not overwrite package.json, lockfiles, environment files or framework configuration blindly.
+8. Keep components modular so authentication, the AI engine, database and APIs can be added later.
+9. Do not expose API keys, service-role credentials or private secrets in browser code.
+10. Implement the frontend now. Do not pretend that an external AI service, authentication provider, database or live pose detection is connected unless it has actually been implemented and tested.
+
+# 1. DESIGN SYSTEM AND VISUAL IDENTITY
+
+Create a premium fitness-tech experience inspired by modern AI products, professional fitness dashboards and high-end wellness applications.
+
+### Color palette
+- Primary background: deep charcoal or near-black.
+- Secondary background: dark graphite.
+- Primary accent: energetic neon lime green.
+- Primary text: white.
+- Secondary text: muted gray.
+- Cards: dark surfaces with subtle borders.
+- Status colors: accessible green, amber and red for success, warnings and errors.
+
+### Design characteristics
+- Bold modern typography.
+- Large editorial headlines.
+- Premium gym photography and exercise imagery.
+- Subtle gradients and background glows.
+- Rounded cards and consistent spacing.
+- Clean icons.
+- Smooth, restrained animations.
+- Interactive charts and progress indicators.
+- Clear visual hierarchy.
+- Consistent hover, focus, active, loading and disabled states.
+
+Use Lucide icons or the icon library already installed.
+
+Use authentic-looking fitness imagery from suitable image sources when available. Avoid broken image URLs, random unrelated images and excessive stock photography.
+
+Do not make the entire website look like a generic admin template. The landing page should feel aspirational and the authenticated dashboard should feel practical and data-driven.
+
+### Responsive design
+Support:
+- Desktop and laptop screens.
+- Tablets.
+- Mobile phones.
+
+Use a responsive sidebar or top navigation for authenticated pages. On mobile, use a compact navigation menu or bottom navigation where appropriate.
+
+Respect reduced-motion preferences and maintain accessible color contrast, semantic HTML and keyboard navigation.
+
+# 2. APPLICATION ROUTES AND USER JOURNEY
+
+Organize the application into clear public and authenticated areas.
+
+Suggested routes:
+
+- /
+- /login
+- /signup
+- /verify-email
+- /forgot-password
+- /onboarding
+- /dashboard
+- /workouts
+- /workouts/library
+- /workouts/:exerciseId
+- /live-workout/:exerciseId
+- /diet
+- /diet/meal-plan
+- /tracker
+- /progress
+- /profile
+- /settings
+
+Adapt dynamic routes to the existing router. Do not create duplicate route systems.
+
+The intended user journey is:
+
+Landing page → Sign up → Email verification screen → Fitness onboarding → Personalized dashboard → Workout or diet planning → Live workout session → Daily tracking → Progress and recommendations.
+
+Returning users should be able to log in and continue to their dashboard.
+
+# 3. LANDING PAGE
+
+Build a polished, animated, full-featured public landing page.
+
+## Navigation bar
+Include:
+- FitLife AI logo.
+- Home.
+- Features.
+- How It Works.
+- About.
+- Login.
+- Get Started.
+
+The navigation must work on desktop and mobile.
+
+## Hero section
+
+Headline:
+
+"Your Body. Your Goals. Your AI Fitness Coach."
+
+Supporting copy:
+
+"Train smarter with real-time workout guidance, personalized nutrition, adaptive training plans and daily progress tracking — all in one place."
+
+Primary CTA: "Start Your Journey"
+
+Secondary CTA: "Explore Features"
+
+Include a premium fitness visual showing a person training with an AI-inspired body landmark overlay or an attractive fitness dashboard preview.
+
+Add concise feature indicators:
+- AI Workout Coach
+- Personalized Nutrition
+- Smart Progress Tracking
+
+Use tasteful entrance animations, layered visuals and subtle motion without compromising performance.
+
+## Feature section
+
+Create attractive feature cards for:
+
+1. Live AI Workout Coach.
+2. Personalized Diet Planner.
+3. Smart Workout Planner.
+4. Daily Habit Tracker.
+5. Progress Analytics.
+6. Personalized AI Insights.
+
+Each card should include an icon, concise description and a suitable visual treatment.
+
+## How It Works
+
+Show four stages:
+
+1. Create your fitness profile.
+2. Choose your goal.
+3. Follow your personalized plans.
+4. Track your progress and improve.
+
+Use a clear visual timeline or numbered cards.
+
+## Product preview
+
+Create an illustrative dashboard preview featuring:
+- Today's workout.
+- Nutrition progress.
+- Workout completion.
+- Weekly activity.
+- Daily tasks.
+
+Clearly label illustrative data as a preview rather than real user data.
+
+## Benefits section
+
+Explain how the platform supports beginners, builds consistent exercise habits, simplifies meal planning and makes progress easier to review.
+
+## About section
+
+Explain the FitLife AI vision and how its planned modules work together.
+
+## FAQ section
+
+Include questions about:
+- What FitLife AI does.
+- How camera-based workout guidance works.
+- Whether beginners can use it.
+- How meal plans are personalized.
+- How progress is tracked.
+- The difference between fitness guidance and professional medical advice.
+
+Use an interactive accordion.
+
+## Final call to action
+
+Headline: "Your Fitness Journey Starts Today."
+
+Include a prominent Get Started button.
+
+## Footer
+
+Include navigation, contact placeholder, privacy policy, terms and an appropriate health disclaimer.
+
+Do not fabricate testimonials, user statistics, endorsements or guaranteed results.
+
+# 4. SIGN-UP, LOGIN AND EMAIL VERIFICATION SCREENS
+
+Create polished authentication interfaces consistent with the landing page.
+
+## Sign-up page
+Fields:
+- Full name.
+- Email address.
+- Password.
+- Confirm password.
+- Terms and privacy acknowledgement.
+
+Include password visibility toggles, validation messages, password strength feedback and a link to login.
+
+## Email verification screen
+After the registration flow, show a dedicated verification screen with:
+- The destination email address when available.
+- Instructions to check the inbox.
+- Resend verification email action.
+- Verification status.
+- Back-to-login navigation.
+
+Provide clear success and failure states.
+
+## Login page
+Include:
+- Email.
+- Password.
+- Show/hide password.
+- Remember-me option if supported by the chosen authentication provider.
+- Forgot password.
+- Login button.
+- Link to registration.
+
+## Password reset
+Build the request-reset screen and a reset-password screen or confirmation state.
+
+IMPORTANT:
+These are frontend screens until a real authentication provider is connected. Do not claim an email has been sent or verified when no real service performed that action. Create a clean authentication service interface so a real provider can be connected later.
+
+Do not store plaintext passwords or implement insecure password storage in the frontend.
+
+# 5. FITNESS ONBOARDING WIZARD
+
+After successful registration and verification, guide the user through a multi-step fitness profile setup.
+
+Use a progress indicator, Previous and Continue buttons, input validation and a review step.
+
+## Step 1: Personal information
+- Full name.
+- Age or date of birth.
+- Height in centimeters or feet/inches.
+- Weight in kilograms or pounds.
+
+## Step 2: Fitness goal
+Allow selection of:
+- Fat loss.
+- Muscle gain.
+- General fitness.
+- Strength development.
+- Improved endurance.
+- Mobility and flexibility.
+
+Use clear selectable cards with icons.
+
+Do not assume that every user needs to lose or gain weight.
+
+## Step 3: Fitness experience
+- Beginner.
+- Intermediate.
+- Advanced.
+
+Ask about previous training experience and comfort with exercise.
+
+## Step 4: Training preferences
+- Gym.
+- Home workout.
+- Bodyweight only.
+- Dumbbells.
+- Resistance bands.
+- Other available equipment.
+
+Ask for:
+- Preferred workout days.
+- Session duration.
+- Preferred workout time.
+- Training location.
+
+## Step 5: Nutrition preferences
+- Vegetarian.
+- Vegan.
+- Eggetarian.
+- Non-vegetarian.
+- Other dietary preferences.
+
+Also collect:
+- Food allergies.
+- Dietary restrictions.
+- Food dislikes.
+- Preferred cuisine.
+- Approximate food budget, optionally.
+
+## Step 6: Lifestyle and limitations
+Collect optional activity level, sleep preferences and exercise limitations relevant to safe plan selection. Do not request unnecessary sensitive information.
+
+## Step 7: Review
+Show the complete profile in an editable summary.
+
+After submission, show a short, tasteful transition animation and navigate to the dashboard.
+
+Persist profile data only through the configured storage or backend service. Until then, use clearly identified demo state and a replaceable data-service abstraction.
+
+Include validation, error messages, back navigation and the ability to edit the profile later.
+
+# 6. AUTHENTICATED DASHBOARD
+
+Create a professional fitness dashboard with a responsive sidebar.
+
+Navigation items:
+- Dashboard.
+- Live AI Workout.
+- Workout Planner.
+- Diet Planner.
+- Daily Tracker.
+- Progress.
+- My Profile.
+- Settings.
+- Logout.
+
+The dashboard should contain:
+
+## Welcome section
+Show a personalized greeting and the current date.
+
+## Today's overview
+Display:
+- Planned workout.
+- Meals completed.
+- Water intake.
+- Daily task completion.
+- Activity summary.
+
+## Today's workout card
+Show the selected training session, planned exercises, duration and a Start Workout button.
+
+## Nutrition card
+Show estimated calorie intake and relevant macronutrients when real meal data is available.
+
+## Habit tracker preview
+Show today's checklist with interactive completion controls.
+
+## Progress charts
+Include weekly activity and completion trends using a chart library such as Recharts if compatible with the project.
+
+## AI recommendation card
+Display a short suggestion based on actual available records. If the application has no historical data, show a useful first-day recommendation rather than inventing history.
+
+Include loading, empty, error and successful states throughout.
+
+# 7. EXERCISE LIBRARY
+
+Build an exercise discovery page.
+
+Include:
+- Search bar.
+- Muscle group filters.
+- Equipment filters.
+- Exercise category filters.
+- Exercise cards.
+- Exercise instructions.
+- Target muscle groups.
+- Equipment requirements.
+- Safety notes.
+- Demonstration image, video or animation when a suitable source exists.
+- About this Exercise section.
+- Start Exercise button.
+
+Include initial sample exercises:
+- Squats.
+- Push-ups.
+- Bicep curls.
+- Lunges.
+- Shoulder press.
+- Lat pulldown.
+- Plank.
+- Dumbbell row.
+
+Clearly distinguish sample data from data fetched from a real exercise API.
+
+Design the data layer so a documented exercise API such as Wger can be connected later, with optional licensed demonstration media from another provider.
+
+Do not fabricate working external API integrations.
+
+# 8. LIVE AI WORKOUT EXPERIENCE
+
+This is one of the most important screens in FitLife AI.
+
+Create a premium, focused live workout interface.
+
+## Pre-workout screen
+Show:
+- Selected exercise.
+- Exercise instructions.
+- Target muscles.
+- Equipment.
+- Demonstration video or animation.
+- Planned sets and repetitions.
+- Start Session button.
+
+The user should be able to review the exercise before opening the camera.
+
+## Countdown and split-screen session
+
+When the user starts a session, display a brief preparation state and a countdown: 3, 2, 1, Start.
+
+On desktop, use two main panels.
+
+LEFT PANEL — EXERCISE DEMONSTRATION:
+- Exercise demonstration video or animation.
+- Instructions and movement stages.
+- Target muscle groups.
+- Pause and replay demonstration controls.
+- Exercise-specific guidance.
+
+RIGHT PANEL — LIVE CAMERA:
+- User's webcam feed.
+- Body landmark and skeleton overlay when pose detection is actually available.
+- Camera status.
+- Repetition counter.
+- Set counter.
+- Exercise timer.
+- Rest timer.
+- Current movement phase.
+- Live feedback panel.
+
+On smaller screens, stack both panels vertically.
+
+## Camera controls
+Include:
+- Enable camera.
+- Camera permission status.
+- Start.
+- Pause.
+- Resume.
+- Finish workout.
+- Stop camera.
+- Camera unavailable and permission-denied states.
+
+Do not automatically open the camera before the user explicitly starts the live session.
+
+## Pose detection integration boundary
+Prepare a dedicated, replaceable pose-analysis service using the MediaPipe Pose Landmarker JavaScript API.
+
+Design the interface to support:
+- Webcam frame processing.
+- Landmark visibility checks.
+- Joint-angle calculations.
+- Exercise-specific repetition counting.
+- Movement-phase detection.
+- Feedback messages.
+- Confidence and tracking status.
+
+Implement real browser-based pose detection if the environment supports installing and running the required package. Otherwise, build the complete camera-ready interface and an explicitly labeled demo mode. Never display a fake skeleton or simulated repetition counter as genuine AI analysis.
+
+## Initial exercise rules
+Prepare independent analysis modules for:
+- Squats.
+- Push-ups.
+- Bicep curls.
+
+Each exercise must have its own appropriate landmarks, movement states and repetition logic.
+
+Show feedback messages such as:
+- "Move into the starting position."
+- "Keep your movement controlled."
+- "Your body is not fully visible."
+- "Tracking confidence is low."
+- "Repetition completed."
+
+Only display corrective advice when the relevant landmarks are visible and the measurement is sufficiently reliable.
+
+Do not claim perfect posture recognition, injury prevention or medical-grade analysis.
+
+## Voice feedback
+Create a voice-feedback service interface using browser text-to-speech when supported.
+
+Allow the user to enable or disable voice feedback and control its volume where supported.
+
+Avoid repeating the same spoken message every frame. Use cooldowns and state-change triggers so feedback remains understandable.
+
+## Workout completion
+After the user finishes, display:
+- Completed exercises.
+- Repetitions and sets.
+- Session duration.
+- Completion status.
+- Optional notes.
+- Save Workout button.
+- Return to Dashboard button.
+
+Store a session through the configured backend when available. If the backend is not connected, clearly indicate demo or local state.
+
+# 9. PERSONALIZED DIET PLANNER
+
+Build a complete diet planning module.
+
+## Diet dashboard
+Display:
+- Daily nutrition target.
+- Logged nutrition totals.
+- Breakfast.
+- Lunch.
+- Dinner.
+- Snacks.
+- Food preferences.
+- Meal completion status.
+
+## Personalized plan generation
+Use the profile's age, height, weight, activity level, goal, dietary preferences, allergies and restrictions when available.
+
+The interface should allow users to:
+- Generate or request a meal plan.
+- View a daily and weekly plan.
+- Change a meal.
+- Replace a food item.
+- Adjust quantities.
+- Mark a meal as eaten.
+- Add food to the daily tracker.
+- Review estimated nutrition.
+
+Each meal should include:
+- Meal name.
+- Food items.
+- Quantity and units.
+- Estimated calories.
+- Protein, carbohydrate and fat values when supported by data.
+- Preparation instructions when available.
+
+Support vegetarian, vegan, eggetarian and non-vegetarian meal options where appropriate.
+
+Use realistic Indian food examples, including dal, rice, roti, paneer, tofu, vegetables, curd, legumes and suitable alternatives.
+
+Provide calorie and macronutrient summaries only when supported by actual food records or explicitly labeled sample data.
+
+Prepare an integration layer for a structured nutrition source such as USDA FoodData Central or another suitable food database.
+
+Do not invent exact nutrition values and present them as verified measurements.
+
+Do not prescribe extreme diets, diagnose medical conditions or promise specific weight changes. Flag relevant allergies and restrictions and provide cautious guidance for users with medical nutrition needs.
+
+# 10. PERSONALIZED WORKOUT PLANNER
+
+Create a weekly workout planning interface.
+
+The user should be able to select:
+- Fitness goal.
+- Experience level.
+- Training days.
+- Session duration.
+- Equipment.
+- Preferred muscle groups.
+
+Display a weekly calendar and exercise cards.
+
+Each workout should include:
+- Exercise name.
+- Target muscle groups.
+- Sets.
+- Repetitions or duration.
+- Rest interval.
+- Instructions.
+- Demonstration media when available.
+
+Allow users to:
+- View a workout.
+- Edit an exercise.
+- Replace an exercise.
+- Rearrange the schedule.
+- Save the plan.
+- Mark a session completed.
+- Start a live workout from a planned session.
+
+Include sensible rest days and beginner-friendly starting volumes.
+
+The plan generator should be isolated behind a service interface so rules-based logic or an AI provider can be connected later.
+
+Do not generate an entirely random schedule on every render. Maintain a stable plan until the user requests or confirms changes.
+
+# 11. DAILY TRACKER
+
+Create an interactive daily checklist.
+
+Sections:
+
+## Meals
+Display meals from the diet plan. Allow the user to mark each meal completed and undo completion.
+
+## Workouts
+Display planned workouts and exercises. Track completion and session status.
+
+## Water
+Allow the user to record water intake using clear units and update the daily total.
+
+## Personal tasks
+Allow custom activities such as:
+- Walking.
+- Stretching.
+- Sleep routine.
+- Preparing meals.
+- Other user-defined habits.
+
+## Points and streaks
+Implement a transparent points system.
+
+Requirements:
+- Award points for valid completion events.
+- Prevent duplicate points for repeated clicks.
+- Recalculate points when completion is undone.
+- Show daily totals and historical summaries.
+- Avoid penalizing rest days or encouraging excessive exercise.
+- Keep the point rules configurable.
+
+Persist entries through the data service. If the database is not connected, use clearly labeled demo or local persistence without pretending that data is securely stored in a user account.
+
+# 12. PROGRESS AND ANALYTICS
+
+Build a progress page containing:
+- Weekly workout activity.
+- Completed versus planned sessions.
+- Repetition and set history.
+- Meal logging consistency.
+- Estimated nutrition trends.
+- Water intake history.
+- Weight tracking when the user chooses to record it.
+- Daily completion points.
+- Streak history.
+
+Use clean, accessible charts with dates, labels, units and tooltips.
+
+Provide date filters such as:
+- 7 days.
+- 30 days.
+- 90 days.
+
+Distinguish missing data from zero. Do not invent a user's progress history.
+
+Include a progress summary card and an AI insights panel.
+
+# 13. AI INSIGHTS AND TOMORROW'S SUGGESTIONS
+
+Build a dedicated recommendation component.
+
+Possible suggestions:
+- Complete a planned workout if appropriate.
+- Prepare tomorrow's meals.
+- Review exercise technique.
+- Improve consistency with a manageable task.
+- Plan sufficient recovery.
+- Adjust a missed task without guilt.
+
+Recommendations should use actual available data when possible.
+
+Prepare an AI service interface that can later connect to a backend-hosted Gemini API or another provider.
+
+Never place a private AI API key in frontend source code.
+
+If no AI provider is configured, provide a clearly identified rule-based recommendation system using the user's actual logged data. Do not fabricate AI analysis.
+
+Avoid medical diagnosis, extreme dieting, excessive training recommendations and guaranteed results.
+
+# 14. PROFILE AND SETTINGS
+
+Build pages for:
+- Viewing and editing fitness profile information.
+- Changing fitness goals and preferences.
+- Managing diet preferences and allergies.
+- Managing units.
+- Camera and voice feedback preferences.
+- Notification preferences where supported.
+- Accessibility preferences.
+- Account and logout actions.
+- Privacy and data management placeholders.
+
+Make profile changes propagate to the relevant UI components.
+
+# 15. REUSABLE ARCHITECTURE
+
+Keep the project modular.
+
+Use a structure similar to the following, adapted to the existing framework:
+
+src/
+  components/
+    layout/
+    navigation/
+    landing/
+    dashboard/
+    workouts/
+    live-workout/
+    diet/
+    tracker/
+    progress/
+    profile/
+    ui/
+  pages-or-routes/
+  hooks/
+  services/
+    auth-service
+    profile-service
+    exercise-service
+    pose-analysis-service
+    workout-service
+    nutrition-service
+    tracker-service
+    analytics-service
+    ai-insights-service
+  types/
+  utils/
+
+Do not create a second project or blindly copy this illustrative structure if the framework already provides an appropriate organization.
+
+Use TypeScript types for user profiles, exercises, workout plans, workout sessions, meals, nutrition summaries, tasks and progress records.
+
+Keep calculations and business logic out of large UI components.
+
+Use reusable cards, forms, dialogs, buttons, loading states and error boundaries where appropriate.
+
+# 16. DATA AND DEMO MODE
+
+Create realistic sample data for development, but clearly distinguish it from real user data.
+
+Define replaceable service interfaces for:
+- Authentication.
+- Fitness profile storage.
+- Exercise data.
+- Workout plans.
+- Live session summaries.
+- Diet plans.
+- Meal logging.
+- Daily tasks.
+- Progress analytics.
+- AI insights.
+
+Do not scatter mock data throughout the code.
+
+Use one clearly defined demo-data source and a consistent service layer.
+
+Do not claim that the application has real email verification, persistent cloud storage, personalized AI generation, working pose detection or live API integrations unless those features are genuinely connected.
+
+# 17. FUNCTIONAL REQUIREMENTS
+
+The generated application must not be a static visual prototype with inert buttons.
+
+Make the following interactions work within the available frontend capabilities:
+
+- Navigation and mobile menu.
+- Landing page section links.
+- Sign-up and login form validation.
+- Password visibility toggles.
+- Email verification screen navigation.
+- Onboarding steps and profile summary.
+- Dashboard navigation.
+- Exercise search and filters.
+- Exercise detail pages.
+- Workout plan editing.
+- Workout timer and rest timer.
+- Camera permission request and cleanup.
+- Media playback controls where supported.
+- Diet plan display and meal substitutions in demo mode.
+- Meal and task completion.
+- Water logging.
+- Points and streak calculations.
+- Chart filters.
+- Profile editing.
+- Settings controls.
+- Logout and confirmation dialogs.
+
+For functions requiring a backend, show honest demo behavior until the backend is integrated.
+
+Use appropriate form validation, error messages, loading states, empty states and confirmation feedback.
+
+# 18. PERFORMANCE AND ACCESSIBILITY
+
+- Avoid unnecessary re-renders.
+- Keep camera processing separate from ordinary React UI state updates.
+- Clean up event listeners, timers, animation loops and camera tracks.
+- Lazy-load large pages or media when appropriate.
+- Avoid oversized images and excessive animation libraries.
+- Use semantic headings and form labels.
+- Ensure keyboard accessibility.
+- Respect reduced motion.
+- Handle missing network access gracefully.
+- Provide useful error messages rather than blank screens.
+
+# 19. IMPLEMENTATION ORDER
+
+Implement in this order within the SAME project:
+
+1. Inspect workspace and establish the design system.
+2. Create the landing page and reusable layout.
+3. Create authentication and verification screens.
+4. Create onboarding.
+5. Create the dashboard and navigation.
+6. Create the exercise library.
+7. Create the live workout interface and pose-analysis boundary.
+8. Create the diet planner.
+9. Create the workout planner.
+10. Create the daily tracker.
+11. Create progress analytics and AI insights.
+12. Create profile and settings.
+13. Verify navigation, responsive layouts and all frontend interactions.
+
+Build the shared layout, types and service interfaces first so all modules remain consistent.
+
+# 20. FINAL ACCEPTANCE CRITERIA
+
+Before finishing:
+
+1. Run the available build and type checks.
+2. Fix compilation errors introduced by the implementation.
+3. Verify the main routes and responsive layouts.
+4. Check for broken imports and missing components.
+5. Verify that navigation and frontend interactions work.
+6. Confirm that camera resources and timers have proper cleanup.
+7. Confirm that no private API keys are exposed.
+8. Confirm that no second application or nested project was created.
+9. List every file created or modified.
+10. Explain which features are genuinely implemented and which still require backend integration.
+11. Give me the exact commands to run and preview the application in the current environment.
+12. Identify any required configuration or manual setup.
+
+Do not claim that every feature works merely because its interface exists.
+
+The final result should be a visually polished, coherent and navigable FitLife AI frontend that is ready for incremental backend and AI integration.
+
+Start by inspecting the workspace, then implement the application using the existing project structure.
