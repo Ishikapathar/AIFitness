@@ -52,5 +52,36 @@ export const aiInsightsService = {
     }
 
     return insights;
+  },
+
+  async fetchAiInsightsFromServer(
+    userProfile?: any,
+    workoutLog?: any,
+    waterGlasses?: number,
+    fatigueLevel?: string
+  ): Promise<AIInsight[]> {
+    try {
+      const res = await fetch('/api/ai/coach-insight', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ userProfile, workoutLog, waterGlasses, fatigueLevel })
+      });
+      if (!res.ok) throw new Error('Backend request failed');
+      const json = await res.json();
+      if (json.data?.insights && Array.isArray(json.data.insights)) {
+        return json.data.insights.map((item: any, idx: number) => ({
+          id: `ins_server_${Date.now()}_${idx}`,
+          type: item.type || 'recovery',
+          title: item.title,
+          message: item.message,
+          actionableStep: item.actionableStep,
+          relatedModule: item.type === 'nutrition' ? 'diet' : item.type === 'technique' ? 'live-workout' : 'tracker',
+          createdAt: new Date().toISOString()
+        }));
+      }
+    } catch {
+      // Graceful fallback to client-side rules
+    }
+    return this.getInsights();
   }
 };

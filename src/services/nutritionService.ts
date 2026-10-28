@@ -251,5 +251,49 @@ export const nutritionService = {
       fat,
       targetFat: 55
     };
+  },
+
+  async generateAiDietSwap(
+    mealName: string,
+    preference: string,
+    targetCalories: number,
+    targetProtein: number
+  ): Promise<Meal | null> {
+    try {
+      const res = await fetch('/api/ai/diet-swap', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ currentMeal: mealName, dietaryPreference: preference, targetCalories, targetProtein })
+      });
+      if (!res.ok) throw new Error('API failed');
+      const data = await res.json();
+      if (data.meal) {
+        const ingList = Array.isArray(data.meal.ingredients) ? data.meal.ingredients : [];
+        return {
+          id: 'swap_' + Date.now(),
+          mealType: 'lunch',
+          name: data.meal.name || 'AI Optimized Indian Meal',
+          isCompleted: false,
+          totalCalories: Number(data.meal.calories) || targetCalories,
+          totalProtein: Number(data.meal.protein) || targetProtein,
+          totalCarbs: Number(data.meal.carbs) || 45,
+          totalFat: Number(data.meal.fat) || 12,
+          instructions: data.meal.description || 'Nutrient-dense Indian whole-food combination.',
+          items: ingList.map((ing: string, i: number) => ({
+            id: `item_${Date.now()}_${i}`,
+            name: ing,
+            portion: '1 portion',
+            grams: 100,
+            calories: Math.round((Number(data.meal.calories) || targetCalories) / (ingList.length || 1)),
+            proteinGrams: Math.round((Number(data.meal.protein) || targetProtein) / (ingList.length || 1)),
+            carbsGrams: Math.round((Number(data.meal.carbs) || 45) / (ingList.length || 1)),
+            fatGrams: Math.round((Number(data.meal.fat) || 12) / (ingList.length || 1))
+          }))
+        };
+      }
+    } catch {
+      // Graceful fallback
+    }
+    return null;
   }
 };
